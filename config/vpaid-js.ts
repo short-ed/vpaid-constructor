@@ -129,7 +129,7 @@ VpaidVideoPlayer.prototype.renderSlot_ = function () {
 
   overlay.addEventListener('click', this.overlayOnClick_.bind(this))
 
-  const carousel = this.createCarousel(creativeConstructorData.slides, creativeConstructorData.fields)
+  const carousel = this.createCarousel(creativeConstructorData)
 
   // Create button play/pause
   const button =createElement('button', 'avc-carousel-button-play');

@@ -108,12 +108,8 @@ const getVpaidSlideConfig = (slide: {
 
 const getVpaidFieldsCinfig = () => {
   return `
-    ${visibleFields.value.includes(SlideField.Image) ? `'image',` : ''}
-    ${visibleFields.value.includes(SlideField.Title) ? `'title',` : ''}
-    ${visibleFields.value.includes(SlideField.Description) ? `'description'',` : ''}
-    ${visibleFields.value.includes(SlideField.Button) ? `'button',` : ''}
-    ${visibleFields.value.includes(SlideField.Link) ? `'link',` : ''}
-  `.replaceAll('    \n', '')
+    [${visibleFields.value.map((field) => `'${field}',`).join('')}}]
+  `
 }
 
 const vpaidCaroselConfig = computed(() => `
