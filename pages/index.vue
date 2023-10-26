@@ -106,9 +106,17 @@ const getVpaidSlideConfig = (slide: {
   `.replaceAll('      \n', '')
 }
 
+const fieldNames = {
+  [SlideField.Title]: 'title',
+  [SlideField.Image]: 'image',
+  [SlideField.Description]: 'description',
+  [SlideField.Button]: 'button',
+  [SlideField.Link]: 'link',
+}
+
 const getVpaidFieldsCinfig = () => {
   return `
-    [${visibleFields.value.map((field) => `'${field}',`).join('')}}]
+    [${visibleFields.value.map((field) => `'${fieldNames[field]}',`).join('')}]
   `
 }
 
