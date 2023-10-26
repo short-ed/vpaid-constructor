@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import draggable from 'vuedraggable'
 
-const { visibleFields, hiddenFields } =  useSlideSettings()
+const { visibleFields, hiddenFields, textOnButton, textOnLink } =  useSlideSettings()
 </script>
 
 <template>
   <div>
-    <div class="flex items-center justify-between text-[11px] font-semibold uppercase mb-2 px-2">
+    <div class="flex items-center justify-between text-[11px] font-semibold uppercase mb-1 px-2 uppercase">
+      <span>Текст на кнопке</span>
+    </div>
+    <div class="flex items-center justify-between mb-2">
+      <input v-model="textOnButton" type="text" class="w-full border rounded-2 border p-2 h-9 text-[11px] font-semibold" />
+    </div>
+    <div class="flex items-center justify-between text-[11px] font-semibold mb-1 px-2 uppercase">
+      <span>Текст на ссылке</span>
+    </div>
+    <div class="flex items-center justify-between mb-6">
+      <input v-model="textOnLink" type="text" class="w-full border rounded-2 border p-2 h-9 text-[11px] font-semibold" />
+    </div>
+    <div class="flex items-center justify-between text-[11px] font-semibold mb-2 px-2 uppercase">
       <span>Расположение элементов</span>
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9.7575 2.18999L14.1825 4.15499C15.4575 4.71749 15.4575 5.64749 14.1825 6.20999L9.7575 8.17499C9.255 8.39999 8.43 8.39999 7.9275 8.17499L3.5025 6.20999C2.2275 5.64749 2.2275 4.71749 3.5025 4.15499L7.9275 2.18999C8.43 1.96499 9.255 1.96499 9.7575 2.18999Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

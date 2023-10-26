@@ -30,7 +30,7 @@ export const vpaidStyleConfig = `
   left: 0;
   right: 0;
   bottom: 0;
-  top: 20px;
+  top: 0;
   backdrop-filter: blur(10px);
   border-top: 1px solid #ffffff25;
   transition: all 0.35s ease 0.2s;
@@ -85,6 +85,7 @@ export const vpaidStyleConfig = `
   justify-content: center;
   color: white;
   font-size: 12px;
+  font-weight: bold;
   padding: 8px 0;
   transition: all 0.35s ease 0.1s;
 }
@@ -112,6 +113,7 @@ export const vpaidStyleConfig = `
   color: white;
   font-size: 12px;
   padding: 6px 0;
+  margin: 6px 0;
   
   border-radius: 4px;
 

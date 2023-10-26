@@ -3,6 +3,8 @@ import { SlideField } from '~/composables/slide-settings'
 defineProps<{
   field: SlideField
 }>()
+
+const { textOnButton, textOnLink } =  useSlideSettings()
 </script>
 <template>
   <div>
@@ -22,10 +24,10 @@ defineProps<{
         <div class="w-full bg-transparent px-2 rounded text-center text-sm h-8 flex items-center justify-center">Текстовое описание</div>
       </div>
       <div v-if="field === SlideField.Button">
-        <div class="w-full px-2 border rounded-2 text-sm text-center text-primary-foreground bg-primary h-8 flex items-center justify-center">Кнопка</div>
+        <div class="w-full px-2 border rounded-2 text-sm text-center text-primary-foreground bg-primary h-8 flex items-center justify-center">{{ textOnButton }}</div>
       </div>
       <div v-if="field === SlideField.Link">
-        <div class="text-center text-primary flex items-center justify-center text-xs underline hover:decoration-none">Ссылка</div>
+        <div class="text-center text-primary flex items-center justify-center text-xs underline hover:decoration-none">{{ textOnLink }}</div>
       </div>
 
     </div>

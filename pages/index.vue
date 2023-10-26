@@ -124,7 +124,7 @@ const vpaidCaroselConfig = computed(() => `
 const creativeConstructorData = {
   textOnButton: '${textOnButton.value}',
   textOnLink: '${textOnLink.value}',
-  fields: [${getVpaidFieldsCinfig()}],
+  fields: ${getVpaidFieldsCinfig()},
   slides: [
     ${localSlides.value.map((slide, index) => getVpaidSlideConfig(slide, index)).join('')}
   ],
@@ -190,18 +190,19 @@ async function onDrop(files: File[] | null) {
 }
 
 const { isOverDropZone, files } = useDropZone(dropZoneRef, onDrop)
+const { pressed } = useMousePressed()
+
 </script>
 
 <template>
-  <div class="flex w-full p2 h-full" ref="dropZoneRef">
-    <div class="fixed z-10 bg-white/50 w-full h-full p-10" v-if="isOverDropZone && files?.length">
+  <div class="flex w-full p2 min-h-screen" ref="dropZoneRef">
+    <div class="fixed z-10 bg-white/50 w-screen h-screen top-0 left-0 p-10" v-if="isOverDropZone && !pressed">
       <div class="relative w-full h-full border-2px border-primary rounded-xl border-dashed flex items-center justify-center">
         <svg class="w-15 h-15" viewBox="0 0 24 24" fill="none">
           <path d="M18.63 7.1499C18.67 7.7599 18.62 8.4499 18.5 9.2199L17.77 13.9099C17.15 17.8199 15.34 19.1399 11.43 18.5299L6.73999 17.7899C5.38999 17.5799 4.34999 17.2199 3.58999 16.6799C2.13999 15.6699 1.71999 14.0099 2.11999 11.4499L2.85999 6.7599C3.47999 2.8499 5.28999 1.5299 9.19999 2.1399L13.89 2.8799C17.03 3.3699 18.5 4.6499 18.63 7.1499Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M20.5 13.4699L19 17.9799C17.75 21.7399 15.75 22.7399 11.99 21.4899L7.48003 19.9899C5.21003 19.2399 3.95003 18.1999 3.59003 16.6799C4.35003 17.2199 5.39003 17.5799 6.74003 17.7899L11.43 18.5299C15.34 19.1399 17.15 17.8199 17.77 13.9099L18.5 9.2199C18.62 8.4499 18.67 7.7599 18.63 7.1499C21.02 8.4199 21.54 10.3399 20.5 13.4699Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M8.24 8.98C9.20098 8.98 9.98 8.20098 9.98 7.24C9.98 6.27902 9.20098 5.5 8.24 5.5C7.27902 5.5 6.5 6.27902 6.5 7.24C6.5 8.20098 7.27902 8.98 8.24 8.98Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
       </div>
     </div>
     <div class="flex flex-shrink-0 flex-col gap-1 p-2 p">
@@ -246,6 +247,7 @@ const { isOverDropZone, files } = useDropZone(dropZoneRef, onDrop)
       </div>
     </div>
     <div class="flex-1 p-4 overflow-hidden">
+    {{ files }}
       <button class="max-w-full px-4 rounded-2 bg-primary text-primary-foreground h-8 text-xs" type="button" @click="getAllFiles">Скачать архив</button>
       <div class="p-4 border h-420px w-[calc(100%-100px)] overflow-scroll mt-4">
         <pre class="text-xs overflow-hidden max-w-full">{{ vpaidCaroselConfig }}</pre>
