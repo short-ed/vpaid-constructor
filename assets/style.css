@@ -1,0 +1,34 @@
+/* Color variables for light theme */
+:root {
+  --color-background: #fff;
+  --color-foreground: #000;
+  --color-primary: #007bff;
+  --color-primary-foreground: #fff;
+  --color-border: #dee2e6;
+  --color-muted: #6c757d;
+  --color-muted-foreground: #fff;
+  --color-card: #fff;
+  --color-card-foreground: #000;
+  --color-accent: #007bff;
+  --color-accent-foreground: #fff;
+}
+
+/* Color variables for dark theme */
+html.dark {
+  --color-background: #000;
+  --color-foreground: #fff;
+  --color-primary: #ffffff;
+  --color-primary-foreground: #1a1a1a;
+  --color-border: hsl(240, 4%, 16%);
+  --color-muted: #6c757d;
+  --color-muted-foreground: #fff;
+  --color-card: #000;
+  --color-card-foreground: #fff;
+  --color-accent: hsl(240, 4%, 16%);
+  --color-accent-foreground: hsl(250, 250, 250);
+}
+
+/* Set default border color */
+*, *::before, *::after {
+  border-color: var(--color-border);
+}
