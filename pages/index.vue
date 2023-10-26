@@ -258,6 +258,15 @@ const { pressed } = useMousePressed()
             <path d="M5.66666 14.6667C7.19332 14.2333 8.80666 14.2333 10.3333 14.6667" stroke="#FCB74F" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
+        <div class="bg-[#f1f1f1] flex flex-row gap-3 w-full py-3 px-3 rounded-2 mb-3">
+          <div class="text-[10px] font-medium leading-[10px] uppercase text-[#9294A3]">
+            Что бы изменить порядок слайдов, перетащите их в нужном порядке
+          </div>
+          <svg class="self-start w-4 shrink-0" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.53332 12.0267V11.2533C3.99999 10.3267 2.73999 8.52 2.73999 6.6C2.73999 3.3 5.77332 0.713333 9.19999 1.46C10.7067 1.79333 12.0267 2.79333 12.7133 4.17333C14.1067 6.97333 12.64 9.94667 10.4867 11.2467V12.02C10.4867 12.2133 10.56 12.66 9.84666 12.66H6.17332C5.43999 12.6667 5.53332 12.38 5.53332 12.0267Z" stroke="#FCB74F" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.66666 14.6667C7.19332 14.2333 8.80666 14.2333 10.3333 14.6667" stroke="#FCB74F" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <WidgetSlides/>
       </div>
     </div>
