@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
+import type { Database } from '~/types/database.types'
 
 export default defineNuxtPlugin({
   name: 'supabase',
@@ -7,9 +8,8 @@ export default defineNuxtPlugin({
   async setup() {
     const config = useRuntimeConfig()
     const { supabaseKey, supabaseUrl } = config.public
-
-    const supabaseClient = createClient(supabaseUrl, supabaseKey)
-
+    const supabaseClient = createClient<Database>(supabaseUrl, supabaseKey)
+    await supabaseClient.auth.getSession()
     return {
       provide: {
         supabase: {

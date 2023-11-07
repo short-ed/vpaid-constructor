@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -10,13 +10,20 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "1.0.0-beta.29",
+    "@iconify-json/carbon": "^1.1.21",
+    "@iconify-json/logos": "^1.1.37",
     "@nuxt/devtools": "latest",
-    "@supabase/supabase-js": "^2.38.3",
+    "@supabase/supabase-js": "^2.38.4",
     "@unocss/nuxt": "^0.57.1",
+    "@vercel/blob": "^0.14.1",
     "@vueuse/nuxt": "^10.5.0",
     "@zip.js/zip.js": "^2.7.30",
+    "eslint": "^8.52.0",
     "nuxt": "^3.8.0",
-    "vue": "^3.3.6",
+    "tus-js-client": "^3.1.1",
+    "type-fest": "^4.6.0",
+    "vue": "^3.3.7",
     "vue-router": "^4.2.5",
     "vuedraggable": "^4.1.0"
   }

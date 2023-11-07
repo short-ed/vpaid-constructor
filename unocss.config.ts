@@ -7,7 +7,7 @@ import {
   presetUno,
   presetWebFonts,
   transformerDirectives,
-  transformerVariantGroup
+  transformerVariantGroup,
 } from 'unocss'
 
 export default defineConfig({
@@ -16,22 +16,29 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      background: 'var(--color-background)',
-      foreground: 'var(--color-foreground)',
-      primary: 'var(--color-primary)',
+      'background': 'var(--color-background)',
+      'foreground': 'var(--color-foreground)',
+      'primary': 'var(--color-primary)',
       'primary-foreground': 'var(--color-primary-foreground)',
-      muted: 'var(--color-muted)',
+      'muted': 'var(--color-muted)',
       'muted-foreground': 'var(--color-muted-foreground)',
-      card: 'var(--color-card)',
+      'card': 'var(--color-card)',
       'card-foreground': 'var(--color-card-foreground)',
-      accent: 'var(--color-accent)',
+      'accent': 'var(--color-accent)',
       'accent-foreground': 'var(--color-accent-foreground)',
-    }
+    },
   },
   presets: [
     presetUno(),
     presetAttributify(),
-    presetIcons(),
+    presetIcons({
+      scale: 1.2,
+      autoInstall: true,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+    }),
     presetTypography(),
     presetWebFonts({
       fonts: {
@@ -50,7 +57,7 @@ export default defineConfig({
       clip: 'rect(0, 0, 0, 0)',
       whiteSpace: 'nowrap',
       border: '0',
-    }]
+    }],
   ],
   transformers: [
     transformerDirectives(),
